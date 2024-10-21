@@ -1,3 +1,6 @@
+
+<img src="https://github.com/user-attachments/assets/67c72823-a84a-4acc-b323-358b431c7c93">
+
 Welcome to HackerFerb's 3D World! This interactive 3D portfolio showcases my skills and interests as a tech enthusiast specializing in OSINT, Software Development, and the MERN Stack.
 
 ## 🚀 Features
