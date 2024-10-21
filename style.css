@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+#description {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 250px;
+    font-size: 16px;
+    z-index: 1;
+    line-height: 1.6;
+    color: #ff79c6; /* Magenta for headings */
+}
+
+#description h1 {
+    color: #00ffff; /* Cyan for main title */
+}
+
+#description p {
+    color: #f8f8f2; /* Subtle white for text */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    #description {
+        top: unset; /* Remove top positioning */
+        bottom: 20px; /* Place description at the bottom */
+        left: 20px;
+        max-width: 90%; /* Increase width to fit more text */
+        font-size: 14px; /* Reduce text size */
+    }
+}
+
+@media (max-width: 480px) {
+    #description {
+        font-size: 12px; /* Further reduce text size on small screens */
+    }
+}
