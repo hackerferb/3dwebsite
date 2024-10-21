@@ -20,7 +20,7 @@ Welcome to HackerFerb's 3D World! This interactive 3D portfolio showcases my ski
 
 ## 🌌 Live Demo
 
-Check out the live demo of my 3D portfolio [3dbasicportfolio.netlify.app]()
+Check out the live demo of my 3D portfolio [here](3dbasicportfolio.netlify.app)
 
 ## 📸 Social Media Links
 
@@ -33,8 +33,8 @@ Connect with me on my social media profiles:
 To run this project locally, clone the repository and open the index.html file in your browser.
 
 ```bash
-git clone https://github.com/yourusername/hackerferb-3d-portfolio.git
-cd hackerferb-3d-portfolio
+git clone https://github.com/hackerferb/3dwebsite.git
+cd 3dwebsite 
 ```
 🤝 Contributing
 
