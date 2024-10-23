@@ -14,30 +14,28 @@ body {
     font-size: 16px;
     z-index: 1;
     line-height: 1.6;
-    color: #ff79c6; /* Magenta for headings */
+    color: #ff79c6; 
 }
 
 #description h1 {
-    color: #00ffff; /* Cyan for main title */
+    color: #00ffff; 
 }
 
 #description p {
-    color: #f8f8f2; /* Subtle white for text */
+    color: #f8f8f2; 
 }
-
-/* Mobile view adjustments */
 @media (max-width: 768px) {
     #description {
-        top: unset; /* Remove top positioning */
-        bottom: 20px; /* Place description at the bottom */
+        top: unset;
+        bottom: 20px;  
         left: 20px;
-        max-width: 90%; /* Increase width to fit more text */
-        font-size: 14px; /* Reduce text size */
+        max-width: 90%; 
+        font-size: 14px; 
     }
 }
 
 @media (max-width: 480px) {
     #description {
-        font-size: 12px; /* Further reduce text size on small screens */
+        font-size: 12px;
     }
 }
