@@ -4,12 +4,10 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-// Orbit controls for smooth navigation
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.1;
 
-// Ambient lighting for soft light effect
 const ambientLight = new THREE.AmbientLight(0x404040, 2); 
 scene.add(ambientLight);
 
@@ -17,7 +15,6 @@ const pointLight = new THREE.PointLight(0xffffff, 1, 100);
 pointLight.position.set(10, 10, 10);
 scene.add(pointLight);
 
-// Load font for 3D "HackerFerb" text
 const loader = new THREE.FontLoader();
 loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
     const textGeometry = new THREE.TextGeometry('HackerFerb', {
@@ -30,15 +27,14 @@ loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json
         bevelSize: 0.1,
         bevelSegments: 5
     });
-    const textMaterial = new THREE.MeshPhongMaterial({ color: 0x00ffff }); // Neon Cyan
+    const textMaterial = new THREE.MeshPhongMaterial({ color: 0x00ffff });
     const textMesh = new THREE.Mesh(textGeometry, textMaterial);
     textMesh.position.set(-10, 3, -10);
     scene.add(textMesh);
 });
 
-// Planet data with fixed texture URLs
 const planets = [
-{ name: 'Mercury', size: 0.1, distance: 5, texture: 'Mercury.png' },
+    { name: 'Mercury', size: 0.1, distance: 5, texture: 'Mercury.png' },
     { name: 'Venus', size: 0.3, distance: 6.5, texture: 'Venus.jpg' },
     { name: 'Earth', size: 0.35, distance: 8, texture: 'Earth.jpg' },
     { name: 'Mars', size: 0.2, distance: 9.5, texture: 'Mars.webp' },
@@ -50,8 +46,6 @@ const planets = [
 ];
 
 const planetMeshes = [];
-
-// Load planets
 const textureLoader = new THREE.TextureLoader();
 planets.forEach(planet => {
     const geometry = new THREE.SphereGeometry(planet.size, 32, 32);
@@ -64,7 +58,6 @@ planets.forEach(planet => {
     planetMeshes.push({ mesh, distance: planet.distance });
 });
 
-// Particle system for added depth
 const particleCount = 500;
 const particles = new THREE.BufferGeometry();
 const particleMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 });
@@ -80,30 +73,24 @@ particles.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3
 const particleSystem = new THREE.Points(particles, particleMaterial);
 scene.add(particleSystem);
 
-// Camera position
 camera.position.z = 40;
 
-// Animation loop
 function animate() {
     requestAnimationFrame(animate);
 
-    // Simulate planetary orbits with a much slower speed
     planetMeshes.forEach((planet, index) => {
-        const speed = 0.00005 * (index + 1); // Further reduced speed
+        const speed = 0.00005 * (index + 1);
         planet.mesh.position.x = Math.cos(Date.now() * speed) * planet.distance;
         planet.mesh.position.z = Math.sin(Date.now() * speed) * planet.distance;
     });
 
-    // Move particles slightly for a floating effect
     particleSystem.rotation.y += 0.001;
 
-    controls.update(); // Update camera controls
-
+    controls.update();
     renderer.render(scene, camera);
 }
 animate();
 
-// Handle window resize
 window.addEventListener('resize', () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
