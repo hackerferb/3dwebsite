@@ -11,7 +11,6 @@ Welcome to HackerFerb's 3D World! This interactive 3D portfolio showcases my ski
 - <strong>Particle Effects:</strong> Enjoy mesmerizing particle systems that enhance the immersive experience.
 - <strong>Responsive Design:</strong> The layout adapts beautifully to different screen sizes, ensuring a great experience on both desktop and mobile.
 - Responsive Design: The layout adapts beautifully to different screen sizes, ensuring a great experience on both desktop and mobile.
-- 
 ## 🎨 Technologies Used
 
 - Three.js: A JavaScript library for creating and displaying animated 3D graphics.
@@ -20,8 +19,9 @@ Welcome to HackerFerb's 3D World! This interactive 3D portfolio showcases my ski
 
 ## 🌌 Live Demo
 
-Check out the live demo of my 3D portfolio [here](https://3dbasicportfolio.netlify.app)
-
+Check out the live demo of my 3D portfolio
+<a href="https://3dbasicportfolio.netlify.app" style="
+    text-decoration: none;">Here</a>
 ## 📸 Social Media Links
 
 Connect with me on my social media profiles:
